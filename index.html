@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <iframe src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+<html lang="en" >
 
-    <script>
-      (() => {
+<head>
+  <meta charset="UTF-8">
+  
+  
+  
+
+  <title>Bypass YouTube video embed restriction</title>
+
+  
+  
+<style>
+html {
+  overflow: hidden;
+}
+iframe {
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body>
+<iframe src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+  
+      <script id="rendered-js" >
+(() => {
   const url = new URL(window.location)
   const vid = url.searchParams.get('v') ?? 'NAo38Q9c4xA'
   url.searchParams.delete('v')
@@ -12,5 +38,8 @@
   document.querySelector('iframe').src = embedUrl
 })()
     </script>
-  </body>
+
+  
+</body>
+
 </html>
