@@ -35,6 +35,7 @@ iframe {
   const vid = url.searchParams.get('v') ?? 'NAo38Q9c4xA'
   url.searchParams.delete('v')
   const embedUrl = new URL(`https://www.youtube.com/embed/${vid}?${url.searchParams.toString()}`)
+  console.log(embedUrl)
   document.querySelector('iframe').src = embedUrl
 })()
     </script>
