@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
 
     <title>Bypass YouTube video embed restriction</title>
+    <meta
+      http-equiv="Referrer-Policy"
+      content="origin-when-cross-origin"
+    />
 
     <style>
       html {
@@ -20,21 +24,19 @@
     <iframe
       id="unytifrm"
       src=""
-      allow="accelerometer 'self'; autoplay 'self'; clipboard-write 'self'; encrypted-media 'self'; gyroscope 'self'; picture-in-picture 'self'; web-share 'self'"
+      allow="autoplay 'self'; encrypted-media 'self';"
       allowfullscreen="allowfullscreen"
-      sandboxscrolling="allow-same-origin"
       playsinline=""
     ></iframe>
 
     <script id="rendered-js">
       (() => {
         const url = new URL(window.location);
-        const vid = url.searchParams.get("v") ?? "NAo38Q9c4xA";
+        const vid = url.searchParams.get("v");
         url.searchParams.delete("v");
         const embedUrl = new URL(
           `https://www.youtube.com/embed/${vid}?${url.searchParams.toString()}`
         );
-        console.log(embedUrl);
         document.querySelector("iframe").src = embedUrl;
       })();
     </script>
